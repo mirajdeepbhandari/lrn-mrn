@@ -1,0 +1,52 @@
+/* Fullscreen section with gradient background */
+.error-section {
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card-like error container */
+.error-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 60px 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Large error code */
+.error-code {
+  font-size: 6rem;
+  font-weight: 800;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+}
+
+/* Title and message */
+.error-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.error-description {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

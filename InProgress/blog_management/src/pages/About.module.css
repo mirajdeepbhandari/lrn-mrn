@@ -1,0 +1,234 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapAbout {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e293b;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Section Styles */
+.sectionTitle {
+  font-size: 2.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.sectionText {
+  font-size: 1.2rem;
+  color: #b1bccc;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* Mission Section */
+.missionSection {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+}
+
+.missionContent {
+  padding: 2rem 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #c4cad4;
+  font-weight: 400;
+}
+
+.featureIcon {
+  color: #6366f1;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.missionImage {
+  position: relative;
+}
+
+.missionImage img {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.missionImage:hover img {
+  transform: scale(1.02);
+}
+
+/* Values Section */
+.valuesSection {
+  background: #f8fafc;
+}
+
+.valueCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.valueCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #6366f1;
+}
+
+.valueIcon {
+  font-size: 3rem;
+  color: #6366f1;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.valueCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #1e293b;
+}
+
+.valueCard p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* Team Section */
+.teamSection {
+  background: white;
+}
+
+.teamCard {
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.teamImage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  height: 300px;
+}
+
+.teamImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.teamCard:hover .teamImage img {
+  transform: scale(1.1);
+}
+
+.teamOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(99, 102, 241, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.teamCard:hover .teamOverlay {
+  opacity: 1;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.socialLink {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.socialLink:hover {
+  transform: scale(1.1);
+  background: #6366f1;
+  color: white;
+}
+
+.teamInfo h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #1e293b;
+}
+
+.teamRole {
+  color: #6366f1;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.fadeInRight {
+  animation: fadeInRight 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .valueCard {
+    padding: 1.5rem;
+  }
+}

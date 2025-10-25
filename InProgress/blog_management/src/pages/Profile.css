@@ -1,0 +1,413 @@
+.profi-heroSection-contact {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", sans-serif;
+}
+
+/* Floating circle effects */
+.profi-heroSection-contact::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: profi-float 6s ease-in-out infinite;
+}
+
+.profi-heroSection-contact::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  animation: profi-float 8s ease-in-out infinite reverse;
+}
+
+@keyframes profi-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* Content inside hero */
+.profi-heroContent-contact {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profi-heroContent-contact h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  animation: profi-slideDown 0.8s ease-out;
+}
+
+.profi-heroContent-contact p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  opacity: 0.95;
+  line-height: 1.6;
+  animation: profi-slideUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes profi-slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes profi-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .profi-heroSection-contact {
+    padding: 60px 20px;
+  }
+
+  .profi-heroContent-contact h1 {
+    font-size: 2.5rem;
+  }
+
+  .profi-heroContent-contact p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profi-heroSection-contact {
+    padding: 40px 15px;
+  }
+
+  .profi-heroContent-contact h1 {
+    font-size: 2rem;
+  }
+
+  .profi-heroContent-contact p {
+    font-size: 0.95rem;
+  }
+}
+
+
+.profi-profile-body {
+  background:  #f9fafb;
+  min-height: 100vh;
+  padding: 20px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profi-profile-container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.profi-profile-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.profi-profile-picture-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.profi-profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profi-edit-picture-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.profi-edit-picture-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.profi-edit-picture-btn i {
+  color: #667eea;
+  font-size: 18px;
+}
+
+.profi-profile-header.edit-mode .profi-edit-picture-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.profi-profile-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.profi-profile-email {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.profi-profile-content {
+  padding: 40px;
+}
+
+.profi-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profi-section-title i {
+  color: #667eea;
+}
+
+.profi-form-group {
+  margin-bottom: 20px;
+}
+
+.profi-form-label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.profi-form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.profi-form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+}
+
+.profi-form-control:disabled {
+  background-color: #f8f9fa;
+  color: #666;
+}
+
+.profi-textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.profi-bio-section {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.profi-password-section {
+  margin-top: 30px;
+}
+
+.profi-button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.profi-btn-custom {
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 120px;
+}
+
+.profi-btn-edit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.profi-btn-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.profi-btn-save {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+}
+
+.profi-btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(17, 153, 142, 0.4);
+}
+
+.profi-btn-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.profi-btn-cancel:hover {
+  background: #d0d0d0;
+  transform: translateY(-2px);
+}
+
+.profi-hidden {
+  display: none;
+}
+
+.profi-password-input-group {
+  position: relative;
+}
+
+.profi-toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #667eea;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+.profi-toggle-password:hover {
+  color: #764ba2;
+}
+
+.profi-alert-info {
+  background-color: #e7f3ff;
+  border: 2px solid #b3d9ff;
+  color: #004085;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+#profi-profilePictureInput {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .profi-profile-header {
+    padding: 30px 15px;
+  }
+
+  .profi-profile-content {
+    padding: 25px;
+  }
+
+  .profi-profile-name {
+    font-size: 24px;
+  }
+
+  .profi-profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profi-profile-picture-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profi-button-group {
+    flex-direction: column;
+  }
+
+  .profi-btn-custom {
+    width: 100%;
+  }
+
+  .profi-section-title {
+    font-size: 16px;
+  }
+}
+
+.profi-success-message {
+  background-color: #d4edda;
+  border: 2px solid #c3e6cb;
+  color: #155724;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.profi-error-message {
+  background-color: #f8d7da;
+  border: 2px solid #f5c6cb;
+  color: #721c24;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: none;
+}

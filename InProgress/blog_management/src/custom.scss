@@ -1,0 +1,21 @@
+// 1. Define your custom colors
+$favorite: #00ffc8;
+$dirty: #735e13;
+
+// 2. Import Bootstrap functions first
+@import "../node_modules/bootstrap/scss/functions";
+
+// 3. Import Bootstrap variables
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Now merge your custom colors with Bootstrap's default theme colors
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "favorite": $favorite,
+    "dirty": $dirty
+  )
+);
+
+// 5. Import the rest of Bootstrap (after variables are defined/overridden)
+@import "../node_modules/bootstrap/scss/bootstrap";

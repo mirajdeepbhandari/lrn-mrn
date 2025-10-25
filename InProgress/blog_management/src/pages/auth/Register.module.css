@@ -1,0 +1,205 @@
+.registerMainBody {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.registerContainer {
+  width: 100%;
+  max-width: 450px;
+}
+
+.registerCard {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.registerHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registerHeader h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.registerHeader p {
+  color: #999;
+  font-size: 14px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.formControl {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.formControl:focus {
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 0;
+}
+
+.passwordToggle:hover {
+  color: #667eea;
+}
+
+.passwordWrapper .formControl {
+  padding-right: 45px;
+}
+
+.imageUploadWrapper {
+  position: relative;
+}
+
+.imageUploadLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.imageUploadLabel:hover {
+  border-color: #667eea;
+  background-color: rgba(102, 126, 234, 0.05);
+}
+
+.imageUploadLabel i {
+  font-size: 24px;
+  color: #667eea;
+  margin-right: 10px;
+}
+
+.imageUploadLabel span {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#imageInput {
+  display: none;
+}
+
+.imagePreview {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.imagePreview img {
+  max-width: 100%;
+  max-height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.registerBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.registerBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.registerBtn:active {
+  transform: translateY(0);
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: 20px;
+  color: #999;
+  font-size: 14px;
+}
+
+.loginLink a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.loginLink a:hover {
+  color: #764ba2;
+}
+
+@media (max-width: 480px) {
+  .registerCard {
+    padding: 25px;
+  }
+
+  .registerHeader h1 {
+    font-size: 24px;
+  }
+}

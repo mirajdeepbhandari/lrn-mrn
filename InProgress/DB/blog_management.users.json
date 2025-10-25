@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "68eb60de007e03556219e4d5"
+  },
+  "name": "puka",
+  "email": "pukakanxi@gmail.com",
+  "password": "$2b$10$VmLqQqaXBf0eCcqz7AfE/uaPMPgrxM6iXx3654AhEM/xdfWqQX8/u",
+  "roles": [
+    "admin"
+  ],
+  "isEmailVerified": true,
+  "isActive": true,
+  "image": "\\users\\Screenshot 2025-10-12 105417-1760256222674.png",
+  "token": null,
+  "createdAt": {
+    "$date": "2025-10-12T08:03:42.773Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-15T16:25:59.885Z"
+  },
+  "__v": 0,
+  "bio": "i am admin of the app"
+},
+{
+  "_id": {
+    "$oid": "68fa17c4209f293043a2460d"
+  },
+  "name": "miraj deep bhandari",
+  "email": "mirajdeepbhandari030@gmail.com",
+  "password": "$2b$10$VjDUQvkIzpoqwnQiWhoVQ.qeGQPfVxthF6AdUQ1WNdJgcosFsbfam",
+  "roles": [
+    "user"
+  ],
+  "isEmailVerified": true,
+  "isActive": true,
+  "image": "\\users\\1718341583575-1761220548450.jpeg",
+  "token": "",
+  "createdAt": {
+    "$date": "2025-10-23T11:55:48.526Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-23T11:57:28.290Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68fa28982f3dde18d7f7914e"
+  },
+  "name": "Rashmi Deep Bhandari",
+  "email": "edusync521@gmail.com",
+  "password": "$2b$10$RbRLLIvBZcZOA/3trj4z..HnQC4C.YLjq/EvLzN39tHjikIf1VcdS",
+  "roles": [
+    "user"
+  ],
+  "isEmailVerified": true,
+  "isActive": true,
+  "image": "\\users\\1759119724591-1761224856659.jpeg",
+  "token": "",
+  "createdAt": {
+    "$date": "2025-10-23T13:07:36.758Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-23T13:07:56.762Z"
+  },
+  "__v": 0
+}]

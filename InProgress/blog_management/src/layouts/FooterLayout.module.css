@@ -1,0 +1,133 @@
+.footerCustom {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+    padding: 3rem 0 1rem;
+}
+
+.footerSection h5 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerSection ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footerSection a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.footerSection a:hover {
+    color: white;
+    padding-left: 0.5rem;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.socialIcons a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.socialIcons a:hover {
+    background: #667eea;
+    transform: translateY(-3px);
+}
+
+.newsletterForm {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.newsletterForm input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.newsletterForm button {
+    padding: 0.6rem 1.2rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletterForm button:hover {
+    background: #764ba2;
+}
+
+.footerBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footerBottom a {
+    color: #888;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footerBottom a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footerSection {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+
+    .newsletterForm {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletterForm input,
+    .newsletterForm button {
+        width: 100%;
+    }
+}
