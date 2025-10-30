@@ -1,5 +1,5 @@
 import styles from "./Blog.module.css";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 import { useEffect, useState } from "react";
 import instance from "../../utils/axios";
 import { URLS } from "../../constants/index";
@@ -24,6 +24,7 @@ const Blog = () => {
         navigate("/error/404");
       } finally {
         setLoading(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     };
     fetchBlog();
@@ -83,7 +84,13 @@ const Blog = () => {
               <i className="bi bi-bookmark"></i>
               <span>Save</span>
             </button>
+
+            <Link to="/blogs" className={styles.bookmarkBtn} id="bookmarkBtn" style={{backgroundColor: "#ff2e2e", color: "#fff", border:"none", textDecoration: "none"}}>
+              <i class="bi bi-skip-backward-fill"></i>
+              <span>Back</span>
+            </Link>
           </div>
+
         </header>
 
          <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>

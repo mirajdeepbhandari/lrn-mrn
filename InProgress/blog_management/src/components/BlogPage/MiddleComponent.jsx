@@ -2,12 +2,18 @@ import styles from './MiddleComponent.module.css'
 import {BASE_URL} from "../../constants/index";
 import NoPostsFound from '../../components/NoPostsFound'
 import { Link } from "react-router";
+import MiddleComponentTitle from "./MiddleComponentTitle";
 
 
-const MiddleComponent = ({ cardsData = [] , setSearch_term, search_term="", sort_term="", setSort_term}) => {
+const MiddleComponent = ({ cardsData = [] , setSearch_term, search_term="", sort_term="", setSort_term, setPage}) => {
   const resetFilters = () => {
     setSearch_term('');
     setSort_term('');
+  }
+
+  const performSearchAction = (e) => {
+    setPage(1);
+    setSearch_term(e.target.value)
   }
 
   return (
@@ -19,10 +25,7 @@ const MiddleComponent = ({ cardsData = [] , setSearch_term, search_term="", sort
           <div className={styles.bubble}></div>
         </div>
 
-        <div className={styles.blogHeader}>
-          <h1 className={styles.blogTitle}>Latest Articles</h1>
-          <p className={styles.blogSubtitle}>Insights, stories, and perspectives</p>
-        </div>
+        <MiddleComponentTitle/>
 
         <div className={styles.searchFilterSection}>
           <div className={styles.searchBox}>
@@ -32,7 +35,7 @@ const MiddleComponent = ({ cardsData = [] , setSearch_term, search_term="", sort
               id="searchInput"
               placeholder="Search articles by title ..."
               value={search_term}
-              onChange={(e) => setSearch_term(e.target.value)}
+              onChange={(e) => performSearchAction(e)}
               autoFocus={!!search_term}
             />
           </div>
