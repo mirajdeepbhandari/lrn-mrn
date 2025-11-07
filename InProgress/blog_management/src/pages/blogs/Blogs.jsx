@@ -1,7 +1,7 @@
 import MiddleComponent from '../../components/BlogPage/MiddleComponent'
 import Pagination from '../../components/Pagination'
 import BlogLoadingAnimation from '../../components/BlogLoadingAnimation'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 import {
   useQuery
@@ -12,7 +12,13 @@ import { URLS } from '../../constants/index'
 import {searchPreprocessing} from '../../utils/utilityTools'
 import useDebounce from '../../hooks/useDebounce';
 
+
 const Blogs = () => {
+  
+        useEffect(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, []);
+      
       const [page, setPage] = useState(1);
       const [search_term, setSearch_term] = useState('');
       const [sort_term, setSort_term] = useState('');
@@ -37,7 +43,7 @@ const Blogs = () => {
       <>
         <MiddleComponent  cardsData={data?.data?.data?.data}  setSearch_term={setSearch_term} search_term={search_term} sort_term={sort_term} 
         setSort_term={setSort_term} setPage={setPage}/>
-        <Pagination total_data_items={data?.data?.data?.total} page={page} setPage={setPage}/>
+        {data?.data?.data?.data.length > 0 && <Pagination total_data_items={data?.data?.data?.total} page={page} setPage={setPage}/>}
       </>
     )}
   </>

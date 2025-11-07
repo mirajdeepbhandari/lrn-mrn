@@ -21,6 +21,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
 import CreatePosts from "./pages/CreatePosts";
+import MyBookmarks from "./pages/blogs/MyBookmarks";
+import SingleBlogPage from "./pages/admin/blogs/SingleBlogPage";
 
 
 
@@ -75,9 +77,9 @@ const App = () => {
             } 
             />
             
-            <Route path="blogs/:slug" element={
+            <Route path="blog/:slug" element={
              <AuthRoute allowedRoles={["admin"]}>
-              <EditBlog />
+              <SingleBlogPage />
             </AuthRoute>
             }
             
@@ -94,6 +96,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="profile" element={<Profile />} />
           <Route path="create-posts" element={<CreatePosts />} />
+          <Route path="my-bookmarks" element={<MyBookmarks />} />
       </Route>
 
       <Route path="*" element={<Error />} />

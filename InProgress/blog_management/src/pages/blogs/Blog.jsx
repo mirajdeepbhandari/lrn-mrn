@@ -1,14 +1,25 @@
 import styles from "./Blog.module.css";
-import { useParams, Link } from "react-router";
+import { useParams, Link, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import instance from "../../utils/axios";
 import { URLS } from "../../constants/index";
 import BlogLoadingAnimation from '../../components/BlogLoadingAnimation';
-import { useNavigate } from 'react-router';
 import {BASE_URL} from "../../constants/index";
+import { useDispatch, useSelector } from "react-redux";
+import { addBookmark, removeBookmark} from "../../slices/bookmarkSlice";
 
 const Blog = () => {
-  const  navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1); 
+    } else {
+      navigate("/blogs"); 
+    }
+  };
+  const {bookmarks} = useSelector((store) => store.bookmark);
+  const dispatch = useDispatch();
   const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,7 +41,7 @@ const Blog = () => {
     fetchBlog();
   }, [slug, navigate]);
   
-  console.log(blog);
+
 
  return (
   loading ? (
@@ -80,15 +91,25 @@ const Blog = () => {
                 })}</span>
             </div>
             <br/>
-            <button className={styles.bookmarkBtn} id="bookmarkBtn">
-              <i className="bi bi-bookmark"></i>
-              <span>Save</span>
-            </button>
+            {
+              bookmarks.find(bookmark => bookmark.slug === blog.slug) ? (
+                <button className={styles.bookmarkBtn} id="bookmarkBtn" onClick={() => dispatch(removeBookmark(blog.slug))}
+                style={{borderColor: "#2e4dffff", color: "#2e4dffff"}}>
+                <i className="bi bi-bookmark"></i>
+                <span>Saved</span>
+                </button>
+              ) : ( <>
+                   <button className={styles.bookmarkBtn} id="bookmarkBtn" onClick={() => dispatch(addBookmark(blog))}>
+                    <i className="bi bi-bookmark"></i>
+                    <span>Save</span>
+                    </button>
+                    </>
+                  )} 
 
-            <Link to="/blogs" className={styles.bookmarkBtn} id="bookmarkBtn" style={{backgroundColor: "#ff2e2e", color: "#fff", border:"none", textDecoration: "none"}}>
+            <button className={styles.bookmarkBtn} id="bookmarkBtn" style={{backgroundColor: "#ff2e2e", color: "#fff", border:"none", textDecoration: "none"}} onClick={()=> goBack()}>
               <i class="bi bi-skip-backward-fill"></i>
               <span>Back</span>
-            </Link>
+            </button>
           </div>
 
         </header>
@@ -103,7 +124,7 @@ const Blog = () => {
       </div>
       </div>
 
-        <article
+        {/* <article
           className={styles.articleContent}
           style={{ textAlign: "justify" }}
         >
@@ -111,7 +132,15 @@ const Blog = () => {
             {blog.content}
           </p>
 
-        </article>
+        </article> */}
+
+        <article
+        className={styles.articleContent}
+        style={{ textAlign: "justify" }}
+        dangerouslySetInnerHTML={{ __html: blog.content }}
+        ></article>
+
+
       </div>
     </section>
   )

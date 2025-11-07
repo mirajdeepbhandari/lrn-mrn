@@ -1,36 +1,10 @@
 import React from "react";
+import getPageNumbers from "../utils/pagination";
 
 const Pagination = ({ page, setPage, total_data_items, limit = 6 }) => {
   const total_possible_pages = Math.ceil(total_data_items / limit);
   const visiblePages = 6; // number of pages to show in the window[1...2,3,4,5,6,7...,n] (2,3,4,5,6,7) is visiblepage
-
-  const getPageNumbers = () => {
-    if (total_possible_pages <= visiblePages + 2) {
-      return Array.from({ length: total_possible_pages }, (_, i) => i + 1);
-    }
-
-    let start = page - Math.floor(visiblePages / 2);
-    let end = page + Math.floor(visiblePages / 2);  
-
-    if (start < 2) {
-      start = 2;
-      end = start + visiblePages - 1;
-    }
-    if (end > total_possible_pages - 1) {
-      end = total_possible_pages - 1;
-      start = end - visiblePages + 1;
-    }
-
-    const pages = [];
-    for (let i = start; i <= end; i++) pages.push(i);
-
-    if (start > 2) pages.unshift("left-ellipsis");
-    if (end < total_possible_pages - 1) pages.push("right-ellipsis");
-
-    return [1, ...pages, total_possible_pages];
-  };
-
-  const pagesToShow = getPageNumbers();
+  const pagesToShow = getPageNumbers({ page, total_possible_pages, visiblePages });
 
   // Helper function to handle page click and scroll
   const goToPage = (p) => {

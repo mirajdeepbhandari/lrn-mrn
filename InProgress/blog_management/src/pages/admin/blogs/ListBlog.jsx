@@ -1,8 +1,12 @@
 
+import ListAllPosts from '../../../components/AdminPage/ListAllPosts'
 
 const ListBlog = () => {
+ 
   return (
-    <div>ListBlog</div>
+    <>
+    <ListAllPosts />
+    </>
   )
 }
 

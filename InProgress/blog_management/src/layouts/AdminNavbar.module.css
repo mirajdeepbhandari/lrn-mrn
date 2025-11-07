@@ -1,0 +1,73 @@
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-bottom: 1px solid #475569;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar:hover {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  color: #ef4444 !important;
+}
+
+/* Brand */
+.navbarBrand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  background-clip: text;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Nav links */
+.navLink {
+  color: #cbd5e1 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 0 0.5rem;
+  padding-bottom: 5px;
+}
+
+.active {
+  border-top: 2px solid #25ebd1 !important;
+  color: #2563eb !important;
+  pointer-events: none; /* prevents hover flicker */
+}
+
+/* Logout button */
+.logoutBtn {
+  background-color: #ef4444 !important;
+  color: white !important;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbarCollapse {
+    margin-top: 1rem;
+  }
+
+  .navLink {
+    padding: 0.5rem 0 !important;
+    border-bottom: 1px solid #475569;
+  }
+
+
+  .active {
+    border-top: none !important;
+    border-left: 3px solid #25ebd1 !important;
+     pointer-events: none;
+  }
+}

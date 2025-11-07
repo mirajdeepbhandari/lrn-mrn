@@ -4,7 +4,6 @@ import instance from "../utils/axios";
 import { URLS } from "../constants/index";
 import AlertBox from '../components/AlertBox';
 import {getItem} from "../utils/session"
-import Editor from 'react-simple-wysiwyg';
 
 const CreatePosts = () => {
   const fileInputRef = useRef(null);
@@ -125,9 +124,14 @@ const CreatePosts = () => {
                 <i className="bi bi-file-text"></i>
                 Content
               </label>
-              <Editor className={styles.richEditor}value={formData.content} onChange={(e)=>setFormData((prev)=> ({...prev, content: e.target.value}))} required/>
+              <textarea
+                className={styles.formControl}
+                id="content"
+                placeholder="Write your blog post content here..."
+                required
+                onChange={(e)=>setFormData((prev)=> ({...prev, content: e.target.value}))}
+              ></textarea>
             </div>
-           
 
             {/* Image Upload */}
             <div className={styles.formGroup}>

@@ -88,7 +88,7 @@ const list = async ({ search, page = 1, limit = 10 }) => {
 
 
 const getBySlug = (slug) => {
-    return blogModel.findOne({ slug , status: "published"}).populate('author' , 'name email bio image');
+    return blogModel.findOne({ slug }).populate('author' , 'name email bio image');
 };
 
 const getAllMyBlogs = async ({ search, page = 1, limit = 10 , currentUser}) => {
@@ -209,15 +209,24 @@ const removeBySlug = async (slug, owner) => {
     return blogModel.deleteOne({ slug });
 };
 
-const getAllPublishedBlogs = async ({search, page = 1, limit = 10, sort = "latest"}) => {
-    console.log(`title: ${search?.title}, page: ${page}, limit: ${limit}`);
-     const query = [
-        {
+const getAllPublishedBlogs = async ({search, page = 1, limit = 10, sort = "latest", status = "published"}) => {
+    
+    const query = [];
+
+    if (status === "published") {
+            query.push({
+                $match: {
+                    status: "published",
+                },
+            });
+    }
+    else if (status === "draft") {
+        query.push({
             $match: {
-                status: "published",
+                status: "draft",
             },
-        }
-     ];
+        });
+    }
 
     // Search by title
     if (search?.title) {

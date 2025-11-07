@@ -77,9 +77,13 @@ const MiddleComponent = ({ cardsData = [] , setSearch_term, search_term="", sort
           <h2 className={styles.blogCardTitle} style={{ textAlign: 'center' }}>
             {card.title?.length > 100 ? card.title.slice(0, 100) + " ..." : card.title}
           </h2>
+
           <p className={styles.blogCardDescription} style={{ textAlign: 'justify' }}>
-            {card.content?.length > 200 ? card.content.slice(0, 200) + " ..." : card.content}
-          </p>
+          {card.content
+            ? card.content.replace(/<[^>]+>/g, '').slice(0, 200) + (card.content.replace(/<[^>]+>/g, '').length > 200 ? " ..." : "")
+            : ""}
+         </p>
+
           <div>
             <Link to={`/blog/${card.slug}`} className={styles.readMore} style={{textDecoration: 'none'}}>
             <button className={styles.readMore}>

@@ -1,6 +1,6 @@
 import styles from './NoPostsFound.module.css';
 
-const NoPostsFound = () => {
+const NoPostsFound = ({Title="No Posts Found", message="We couldn't find any posts at the moment."}) => {
   return (
     <section className={styles.noFoundWrap}>
       <div className={styles.decorativeDots}>
@@ -18,8 +18,8 @@ const NoPostsFound = () => {
         </div>
 
         <div className={styles.contentBox}>
-          <h1 style={{ fontSize: '2rem', color:'white'}}>No Posts Found</h1>
-          <p>We couldn't find any posts at the moment.</p>
+          <h1 style={{ fontSize: '2rem', color:'white'}}>{Title}</h1>
+          <p>{message}</p>
         </div>
       </div>
     </section>

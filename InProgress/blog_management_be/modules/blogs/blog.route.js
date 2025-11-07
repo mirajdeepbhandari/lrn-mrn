@@ -29,7 +29,8 @@ router.post("/create",  blogUpload.single('image'), secureAPI(["admin", "user"])
     }
 });
 
-router.get("/my-blogs", secureAPI(['user','admin']), async (req, res, next) => {
+// afu ley post gareko aauni ho yo
+router.get("/my-blogs", secureAPI(['admin']), async (req, res, next) => {
     try {
         const {title, status, page, limit} = req.query;
         const search = {title, status};
@@ -42,9 +43,9 @@ router.get("/my-blogs", secureAPI(['user','admin']), async (req, res, next) => {
 
 router.get("/published-blogs", async (req, res, next) => {
     try {
-        const { title, page, limit, sort } = req.query; 
+        const { title, page, limit, sort, status } = req.query; 
         const search = { title };
-        const result = await blogController.getAllPublishedBlogs({ search, page, limit, sort });
+        const result = await blogController.getAllPublishedBlogs({ search, page, limit, sort, status });
         res.json({ data: result, msg: "Blog list generated successfully" });
     } catch (e) {
         next(e);
@@ -54,6 +55,7 @@ router.get("/published-blogs", async (req, res, next) => {
 
 router.get("/:slug", async (req, res, next) => {
     try {
+        console.log("Fetching blog with slug:", req.params.slug);
         const blog = await blogController.getBySlug(req.params.slug);
         res.json({ data: blog, msg: "Blog retrieved successfully" });
     } catch (e) {

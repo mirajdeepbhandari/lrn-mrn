@@ -2,8 +2,10 @@ import "./AppNavbar.css";
 import { NavLink, Link } from "react-router";
 import { useState } from "react";
 import { getItem, removeToken } from "../utils/session";
+import {useSelector} from "react-redux";
 
 const AppNavbar = () => {
+  const {quantity} = useSelector((store) => store.bookmark);
  
   // Initialize variables
   let name = null;
@@ -60,6 +62,25 @@ const AppNavbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center">
             
+            <li
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              fontWeight: "500",
+              fontSize: "16px",
+              color: "#333",
+            }}
+          >
+            <Link style={{ textDecoration: "none", color: "#333" }} to="/my-bookmarks">
+            <i
+              className="bi bi-bookmark"
+              style={{ color: "#007bff", fontSize: "20px", marginRight: "4px" }}
+            ></i>
+            <span style={{ color: "#ffffffff" }}>{quantity}</span>
+            </Link>
+          </li>
+
             <li className="nav-item">
               <NavLink
                 to="/"

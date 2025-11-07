@@ -7,6 +7,12 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.richEditor{
+  background-color: #d9d9e0ab !important;
+  height: 300px;
+  color: black !important;
+}
+
 /* Animated stars background */
 .starsContainer {
   position: fixed;
@@ -179,7 +185,7 @@
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   padding: 50px;
-  max-width: 700px;
+  max-width: 1100px;
   width: 100%;
   animation: slideUp 0.6s ease-out;
 }
